@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<head>
+	<dbcppool>
+	
+			<!-- 连接池启动时创建的初始化连接数量 -->
+			<initialSize>1</initialSize>
+		
+        	<!-- 连接池在同一时间能够分配的最大活动连接的数量 -->
+        	<maxActive>20</maxActive>
+        	
+        	<!-- 连接池中容许保持空闲状态的最大连接数量 -->
+        	<maxIdle>3</maxIdle>
+        	
+        	<!-- 连接池中容许保持空闲状态的最小连接数量 -->
+        	<minIdle>1</minIdle>
+        	
+        	<!-- 当没有可用连接时,连接池等待连接被归还的最大时间(ms)
+        	<maxWait>60000</maxWait> -->
+        	
+        	<!-- 连接池中连接，在时间段内一直空闲， 被逐出连接池的时间，默认30分钟 -->
+        	<!-- <minEvictableIdleTimeMillis></minEvictableIdleTimeMillis> -->
+        	
+        	<!-- 超过removeAbandonedTimeout时间后，是否进行废弃连接的回收 -->
+        	<removeAbandoned>true</removeAbandoned>
+        	
+        	<!-- 超过时间限制，回收废弃的连接 (s)-->
+        	<removeAbandonedTimeout>180</removeAbandonedTimeout>
+        	
+        	<!-- 标记当连接被回收时是否打印程序的stack traces日志,默认为false -->
+        	<logAbandoned>false</logAbandoned>
+        	
+        	<!-- 定时对线程池中的链接进行validateObject校验 -->
+        	<testWhileIdle>true</testWhileIdle>
+        	
+        	<!-- 进行BorrowObject处理时校验 -->
+        	<testOnBorrow>false</testOnBorrow>
+        	
+        	<!-- 进行ReturnObject处理时校验 -->
+        	<testOnReturn>false</testOnReturn>
+        	
+        	<!-- 检查的SQL和time out -->
+        	<validationQuery>select sysdate from dual</validationQuery>
+        	<validationQueryTimeout>1</validationQueryTimeout>
+        	
+        	<!-- 设置Evict线程的时间(ms) -->
+        	<timeBetweenEvictionRunsMillis>1800000</timeBetweenEvictionRunsMillis>
+        	
+        	<!-- 代表每次检查链接的数量，应与maxActive设置数保持一致 -->
+        	<numTestsPerEvictionRun>5</numTestsPerEvictionRun>
+	</dbcppool>
+</head>
